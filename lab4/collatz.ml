@@ -17,11 +17,11 @@ let _ = collatz 19;;
 let _ = collatz 27;;
 
 (* f : int -> int -> int -> int *)
-let rec mc_helper (x) (bestx) (maxlen) = 
+let rec f (x) (bestx) (maxlen) = 
     if x = 0 then bestx
     else
         let currlen = collatz x in
-            if currlen > maxlen then mc_helper (x-1) (x) (currlen)
+            if currlen > maxlen then f (x-1) (x) (currlen)
             else f (x-1) (bestx) (maxlen);;
 
 (* max_collatz : int -> int *)
