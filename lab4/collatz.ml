@@ -16,6 +16,12 @@ let _ = collatz 12;;
 let _ = collatz 19;;
 let _ = collatz 27;;
 
+(* 
+ * bestx is the value of x such that collatz x is the largest
+ * amongst all the values of x that we have seen so far. maxlen
+ * is the corresponding value of collatz x.
+ * Function tries out the x's in a descending order. 
+ *)
 (* f : int -> int -> int -> int *)
 let rec f (x) (bestx) (maxlen) = 
     if x = 0 then bestx
